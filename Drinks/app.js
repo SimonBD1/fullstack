@@ -28,7 +28,7 @@ const drinks = [
 ];
 
 
-app.get("/drink", (req, res)=>{
+    app.get("/drink", (req, res)=>{
     res.send({ data: drinks });
     });
 
