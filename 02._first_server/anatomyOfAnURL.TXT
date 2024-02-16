@@ -1,0 +1,7 @@
+protocol    domain      endpoint
+https://www.google.com/search?q=test
+    subdomain   top-level domain
+
+path    query String
+/search?q=test
+        queery parameters

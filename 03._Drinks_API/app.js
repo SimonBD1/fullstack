@@ -1,4 +1,7 @@
-const app = require("express")();
+const express = require("express");
+const app = express();
+app.use(express.json());
+
 
 const drinks = [
     { 
@@ -41,7 +44,40 @@ const drinks = [
             res.status(404).send({ error: "Drink not found" });
         }
     });
+
+    app.post("/drink",(req,res)=>{
+        const newDrink = req.body;
+        drinks.push(newDrink);
+        res.send({ data: newDrink })
+    })
+
+    app.put("/drink/:id",(req,res)=>{
+        const id = Number(req.params.id)
+        const index = drinks.findIndex(drink => drink.id === id);
+    if (index !== -1) {
+        drinks[index] = { ...drinks[index], ...req.body };
+        res.send({ data: drinks[index] });
+    } else {
+        res.status(404).send({ error: "Drink not found" });
+    }
+    })
+
+    app.delete("/drink/:id",(req,res)=>{
+        const id = Number(req.params.id);
+        const index = drinks.findIndex(drink => drink.id === id);
+        if (index !== -1) {
+            drinks.splice(index, 1); //skal jeg bruge delete istedet?
+            res.send({ data: "Drink deleted successfully" });
+        } else {
+            res.status(404).send({ error: "Drink not found" });
+        }
+    })
     
 
-
-    app.listen(8080);
+    app.listen(8080, (error)=>{
+        if(error){
+            console.log("Error starting")
+            return;
+        }
+        console.log("server is running on port", 8080)
+    });
