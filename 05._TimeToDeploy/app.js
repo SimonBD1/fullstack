@@ -120,20 +120,49 @@ app.post("/countdown", (req, res) => {
             font-family: "Lato", sans-serif;
             font-weight: 300;
             font-style: normal;
+         
         }
-                body {
-                   
-                    text-align: center;
-                }
+        body {
+            text-align: center;
+            background-image: url('https://flagcdn.com/dk.svg');
+            background-size: cover; 
+            background-repeat: no-repeat; 
+            background-position: center; 
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+       
+        }
                 #countdown {
                     font-size: 24px;
                     margin-bottom: 20px;
+                         text-align: center;
+               
+
                 }
+                section {
+                    background-color: #FFFFFF; 
+                    border: 5px solid #B72B35;
+                    padding: 20px;
+                    border-radius: 5px; 
+                    max-width: 600px; 
+                    margin: 0 auto; 
+                    position: absolute; 
+                    top: 50%; 
+                    left: 50%; 
+                    transform: translate(-50%, -50%); 
+                }
+                
             </style>
         </head>
         <body>
-            <h1>Countdown Timer</h1>
+        <section>
+            <h1>Birthday countdown</h1>
             <div id="countdown">${days} days or, ${hours} hours or, ${minutes} minutes or, ${seconds} seconds untill its your birthday!</div>
+            </section>
         </body>
         </html>
     `);
