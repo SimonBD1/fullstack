@@ -29,6 +29,18 @@ app.get("/publicSquare",(req,res)=>{
     res.sendFile(__dirname+"/public/publicSquare/publicSquare.html")
 })
 
+app.get("/treasuretrove", (req, res)=>{
+    res.send({data:"you found it"})
+})
+
+app.get("/secretpassphrase", (req, res) => {
+    if (req.query.passphrase !== "ssesameopenup") {
+        res.status(400).send({ data: "wrong password" });
+    } else {
+        res.redirect("/treasuretrove");
+    }
+});
+
 
 const PORT = 8080
 app.listen(PORT, () => console.log("Server is running on port", PORT));

@@ -4,25 +4,29 @@ const app = express();
 
 app.use(express.static("public"))
 
-import path from "path";
-
 import getMatches from "./util/matches.js"
 
+import { homepagePage, matchesPage, contactPage } from "./util/readPages.js";
+
 app.get("/", (req,res)=>{
-    res.sendFile(path.resolve("public/pages/homepage/homepage.html"));
+    res.send(homepagePage);
 })
 
 app.get("/matches",(req,res)=>{
-    res.sendFile(path.resolve("public/pages/matches/matches.html"))
+    res.send(matchesPage)
 })
 
-app.get("/api/matches", (req,res)=>{
-const matches = getMatches();
+app.get("/api/matches", async(req,res)=>{
+const matches = await getMatches();
 res.send({data: matches})
 })
 
 app.get("/contact", (req,res)=>{
-    res.sendFile(path.resolve("public/pages/contact/contact.html"))
+    res.send(contactPage)
+})
+
+app.get("/page", (req, res)=>{
+    res.send("<div> <h1>safaefe<h1/> <h2>adfsasd<h2/> <div/>")
 })
 
 const PORT = 8080;
