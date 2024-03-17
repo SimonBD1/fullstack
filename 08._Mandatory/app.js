@@ -4,16 +4,11 @@ const app = express();
 
 app.use(express.static("public"));
 
-import { homepagePage, week1Page } from "./util/readPages.js";
+import weekpageRouter from "./routers/weekpageRouters.js";
+app.use(weekpageRouter);
 
-app.get("/", (req, res) => {
-  res.send(homepagePage);
-});
-
-app.get("/uge1",(req,res)=>{
-    res.send(week1Page)
-})
-
+import homepageContactetcRouter from "./routers/homeContactetcRouters.js";
+app.use(homepageContactetcRouter)
 
 const PORT = 8080;
 app.listen(PORT, () => console.log("Server is running on port" + PORT));

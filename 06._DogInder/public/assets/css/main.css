@@ -1,12 +1,13 @@
-#logo{
+#logo {
     width: 10em;
 }
-body{
+
+body {
     min-height: 95vh;
     display: flex;
     flex-direction: column;
 }
 
-main{
+main {
     flex: 1;
 }

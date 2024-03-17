@@ -1,0 +1,18 @@
+.sticky-container {
+    padding-right: 240px; /* Adjust based on the width of the sticky element */
+  }
+  
+  .sticky {
+    position: -webkit-sticky; /* For Safari */
+    position: sticky;
+    top: 0;
+    width: 400px;
+    background-color: #161414;
+    border: 1px solid #ccc;
+    padding: 20px;
+  }
+  
+  .content {
+    padding-left: 20px;
+  }
+  
