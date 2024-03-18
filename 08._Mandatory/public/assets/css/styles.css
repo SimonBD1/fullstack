@@ -1,18 +1,60 @@
-.sticky-container {
-    padding-right: 240px; /* Adjust based on the width of the sticky element */
-  }
+* {
+  font-family: system-ui;
   
-  .sticky {
-    position: -webkit-sticky; /* For Safari */
-    position: sticky;
-    top: 0;
-    width: 400px;
-    background-color: #161414;
-    border: 1px solid #ccc;
-    padding: 20px;
-  }
-  
-  .content {
-    padding-left: 20px;
-  }
-  
+}
+
+.wrapper {
+  border: 1px solid#cad4df;
+  font-size: 15px;
+  line-height: 1.7rem;
+}
+h1 {
+  font-size: 25px;
+  text-align: center;
+
+}
+
+
+section {
+  display: grid;
+  grid: auto / 0.6fr 1fr;
+  gap: 3rem;
+}
+
+p {
+  font-size: 16px;
+  max-width: 60ch;
+  line-height: 1.9rem;
+}
+
+section header {
+  position: sticky;
+  top: 2rem;
+  align-self: start;
+}
+
+figure {
+  margin: 0;
+}
+h2 {
+    font-size: 25px;
+
+}
+
+h3 {
+    font-size: 20px;
+}
+img {
+  inline-size: 100%;
+  display: block;
+  height: auto;
+}
+
+main {
+  max-inline-size: 1200px;
+  margin-block: 0.1rem; 
+  margin-inline: 4rem auto; /*placerer indhold i midten*/
+  display: grid;
+  gap: 6rem;
+  font-family: system-ui;
+}
