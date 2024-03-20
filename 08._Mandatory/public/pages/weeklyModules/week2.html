@@ -1,12 +1,96 @@
-<h1>Uge 2</h1>
+<header></header>
 
-<p>
-  Vi lærte i denne uge omkring omkring callback functions, scoping,
-  package.json, lave express instans og brugen af express. Vores app.js i denne
-  uge bestod af at sende data til en browser, også med request parametre.
-  scoping I JavaScript findes der grundlæggende tre forskellige former for
-  scopes. Den første er globale scopes, som er tilgængeligt over hele
-  scriptet/filen. Den anden er lokale scopes, som kun er tilgængeligt inden for
-  en funktion. Endelig er der blok-scope, som kun er tilgængeligt inden for en
-  specifik {}-blok, eksempelvis i et loop. Altid brug const hvis man kan
-</p>
+<main>
+  <section>
+    <header>
+      <div class="wrapper">
+        <h1>Læringsmål</h1>
+        <ul>
+          <li>
+            Understand scoping in Javascript and know to always use const if you
+            can get away with it otherwise let.
+          </li>
+          <li>Understand advanced things about functions in Javascript</li>
+          <li>Can write callback functions with different syntax.</li>
+          <li>Understands package.json and can set it up by hand.</li>
+          <li>Can create a server instance with Express from memory.</li>
+          <li>
+            Understands how to send data with GET requests over HTTP and knows
+            how to do it in Express.
+          </li>
+          <li>Understands node_modules.</li>
+        </ul>
+      </div>
+    </header>
+
+    <div class="body">
+      <h2>Uge 2</h2>
+
+      <h3>Overordnet</h3>
+      <p>
+        Vi lærte i denne uge omkring omkring callback functions, scoping,
+        package.json, lave express instans og brugen af express. Vores app.js i
+        denne uge bestod af at sende data til en browser, også med request
+        parametre.
+      </p>
+      
+      <h3>scoping</h3>
+      <p>
+        scoping I JavaScript findes der grundlæggende tre forskellige former for
+        scopes. Den første er globale scopes, som er tilgængeligt over hele
+        scriptet/filen. Den anden er lokale scopes, som kun er tilgængeligt
+        inden for en funktion. Endelig er der blok-scope, som kun er
+        tilgængeligt inden for en specifik {}-blok, eksempelvis i et loop. Altid
+        brug const hvis man kan
+      </p>
+      <h3>Altid brug const hvis vi kan slippe af med det</h3>
+      <p>
+        const er som det tyder, en konstant, og bruges om værdier som man gerne ser ikke bliver ændret i programmets forløb.
+        I modsætning til det, kan man gøre brug af 'let', som man gerne må ændre værdien i igennem programmets levetid.
+      </p>
+      
+
+      <h3>Advanced functions</h3>
+      <p>
+        funktioner kan blive tildelt til variabler, overført som argumenter og returneres fra andre funktioner
+        callback funktioner er funktioner, der overføres som arguemnter til andre funktioner. arrow functions ()=>{} er en kortere måde at skrive funktioner på, som også returnere indholdet.
+        Billedet her viser et eksempel på en callback funktion
+      </p>
+      <figure>
+        <img src="../../assets/images/callbackFunction.png">
+      </figure>
+      <p>
+        Funktionen tager 'running' som et callback og kalder den med det givet parametre navn "Alex"
+      </p>
+
+      <h3>Package.json</h3>
+      <p>
+        Package.json er filen som indeholder alle projektets dependencies, metadata som eksempelvis projektets navn, dens version, beskrivelse osv. 
+        den indeholder også scripts som vi gjorde brug af i vores nodemon, hvor vi fortalte den at lytte efter ændringer i mere end bare app.js, som for eksempel html filer og package.json
+      </p>
+
+      <h3>Express</h3>
+      <p>
+        Vi lærte også at bruge express og sætte en server op med dette.
+        I screenshottet er der inkluderet hvordan vi importere express fra biblioteket, instantiere det på const app og bruger app.use til at konfigurer express til at analysere json-data der bliver sendt i anmodninger.
+      </p>
+        <figure>
+          <img src="../../assets/images/express2.png">
+        </figure>
+        <p>
+          Ikke inkluderet i screenshottet har vi opsætningen af en route som ser således ud <code>app.get("/", (req, res) => {
+          res.send({ data: "welcome" });
+        });</code>
+        i dette styk kode, sætter vi roden af vores endpoint til en GET metode ved app.get, når vi rammer det endpoint vil funktionen blive udløst, og respondet til klienten blive sendt. I dette tilfælde et json object med nøglen "data" og værdien "Welcome"
+        Vi bruger også <code>app.listen(8080)</code> til at fortælle at vores app skal køre/lytte til port 8080
+      </p>
+
+      <h3>
+        node_modules
+      </h3>
+      <p>
+        Node_modules er en mappe i et Node.js-projekt, der indeholder alle eksterne pakker og deres afhængigheder, som er installeret ved hjælp af npm.
+      </p>
+    </div>
+  </section>
+</main>

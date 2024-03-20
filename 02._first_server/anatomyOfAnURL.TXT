@@ -5,3 +5,4 @@ https://www.google.com/search?q=test
 path    query String
 /search?q=test
         queery parameters
+        
