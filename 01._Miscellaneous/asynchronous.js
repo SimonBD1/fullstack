@@ -45,6 +45,8 @@ function myPromise() {
   });
 }
 
+
+
 myPromise()
   .then((result) => {
     console.log("Promise resolved:", result);
@@ -75,8 +77,8 @@ myFetch("https://example.com/api/data")
     console.error("Error:", error);
   });
 
-/*try to simulate the fetch function call it myFetch it should return athe promis json() so that you can  call Response.json() on it 
-as much as possible try to imagine how fetch orks and simulate the underlying connected. */
+/*try to simulate the fetch function call it myFetch it should return the promise json() so that you can  call Response.json() on it 
+as much as possible try to imagine how fetch works and simulate the underlying connected. */
 
 
 //IIFE

@@ -1,0 +1,105 @@
+<header></header>
+
+<main>
+  <section>
+    <header>
+      <div class="wrapper">
+        <h1>Læringsmål</h1>
+        <ul>
+          <li>
+            While using a linter is not a requirement, having clean code is.
+          </li>
+          <li>
+            Can work with promises, async/await. Understand why asynchronous
+            code is relevant in Node.js.
+          </li>
+          <li>Can create an Express Router by heart.</li>
+        </ul>
+      </div>
+    </header>
+
+    <div class="body">
+      <h2>Uge 7</h2>
+      <h3>Clean Code, hvorfor?</h3>
+      <p>
+        Clean code er alt afgørende, især når man arbejder flere sammen. Det
+        burde være almen viden, men ikke alle overholder praksiserne. Der findes
+        flere forskellige standarder for hvordan kode skal opsættes, og de kan
+        variere fra sprog til sprog, men vigtigst af alt handler det om at alle
+        i et team samarbejder om samme standard. Koden skal have omfattende
+        struktur og skrives med læselighed for øje, så andre, og dig selv kan
+        nemt læse, overskue og forstå den. Clean code omfatter alt fra mappe
+        struktur til variable navne, til gentagne funktioner mm. Hvis projektet
+        strækker sig over en længere periode, man arbejder flere sammen, eller
+        man ved at man kommer til at kigge på ens projekt senere hen, så er kode
+        kommentarer yderst vigtige! Med nogle enkelte ord kan man hurtigt spore
+        læseren ind på hvad der foregår i lige præcis den linje. Det hjælper
+        selvfølgelig hvis man vil genbruge koden, men også hvis man skal arbejde
+        videre med den.
+      </p>
+
+      <h3>Asynkron kode i node.js</h3>
+      <p>
+        Vi har på semestret arbejdet meget med asynkrone funktioner og jeg er
+        selv stadig igang med at forstå det helt 100%. Overordnet set handler
+        det om at køre flere ting på en gang. Javascript har kun en tråd, som er
+        main tråden. Derfor kører alt på en tråd, så man vil helst ikke blokere
+        den tråd. Mange operationer i Node.js, såsom netværksanmodninger og
+        databaseforespørgsler, indebærer Input/Output-operationer, som kan tage
+        noget tid for at fuldføre. Ved at bruge asynkron kode kan Node.js
+        fortsætte med at udføre andre opgaver, mens den venter på, at disse
+        operationer skal afsluttes, hvilket maksimerer effektiviteten og
+        skalerbarheden. De typiske tidpunkter man vil bruge Callbacks på er ved
+        browser event handlers, network calls, buffer/streams, databaser eller
+        hvis man arbejder med filer / directories, setTimeout() og
+        setInterval(). Man kan opnå asynkron kode på 3 forskellige måder. Den
+        første jeg vil gennemgå er Callbacks. Problemet med callbacks er at man
+        kan ende i et callback hell, når vi laver flere nestede callback
+        funktioner i en.
+      </p>
+      <figure>
+        <img src="../../assets/images/callbackhelvede.png" />
+      </figure>
+      <p>
+        Som man kan se ovenfor ser det ikke særligt pænt eller overskueligt ud.
+        Det er svært at tyde med det samme hvor, hvis en fejl vil opstår. Det
+        bliver også kaldt for "pyramid of doom" begrund af dens pyramide agtige
+        form. For at fikse dette problem introducerede javascript
+        "<b>Promises</b>" Promises løser problemet idet de tilbyder et mere
+        struktureret og læsbart syntaks. Promises kan enten være i tilstanden
+        Pending eller fulfilled/rejected. Hvis et promise når til stadiet
+        "fulfilled", kører <code>.then</code> funktionen, så man kan arbejde
+        videre med det svar. hvis den derimod ryger i som "reject", ryger den
+        ned i catchblokken hvor man her kan håndtere evt. fejl.
+      </p>
+      <figure>
+        <img src="../../assets/images/promise.png"/>
+      </figure>
+      <p>
+        Den sidste mulighed er Async/await, som også er baseret på promises, men som Anders og andre også deler holdning om, ser pænere ud i syntaks, da det ikke bruger 
+        <code>.then()</code> og <code>.catch()</code>. 
+            async funktioner returnere et promise "under the hood" og await bliver brugt til at vente indtil promise't resolves.
+      </p>
+
+      <p>
+        Den sidste ting vi gennemgik på den dag var en 'IFFE' som sjovt nok udtales iffY. IFFE er kort for "immediately invoked function expression"
+         nedenfor er der et screenshot af det vi arbejde med i timen.
+         main bruger async og await til at vente på, at myPromise er afsluttet. Når myPromise er afsluttet, bliver resultatet gemt i myPromiseResult.
+         Den sjove ting med IFFE er at hele metoden er indkapslet i parenteser, plus endnu et sæt parenteser til slut, så koden udføres med det samme.
+      </p>
+      <figure>
+        <img src="../../assets/images/IFFE.png">
+      </figure>
+
+      <h3>Express router</h3>
+      <p>
+        Vi lærte også i timen hvordan man opsætter routers i ens program. En af fordelene var at man så  holder app.js så tom som mulig, og laver en klar opdeling.
+        Det var egentlig meget simpelt, man starter med sin <code>import { Router } from "express";</code> og derefter instansiere den således <code>const router = Router();</code>.
+        Herefter importere vi så alle vores pages fra vores readPages.js og sender dem som vi førhen har gjort med app, dog udskiftes <code>app.get</code> med <code>routers.get</code>
+        Som det sidste i vores router fil exportere vi hele router instansen, og importere til vores app.js med <code>import weekpageRouter from "./routers/weekpageRouters.js";</code>
+        og slutter af med at fortælle app skal bruge denne med <code>app.use(weekpageRouter);</code>
+      </p>
+
+    </div>
+  </section>
+</main>
