@@ -53,19 +53,19 @@
         scripts, når du har brug for dem. Dette vil gøre den indledende
         sideindlæsning hurtigere. Dette er særligt nyttigt, når du har mange
         moduler og scripts, og du ikke har brug for dem alle på samme tid. En
-        ting at altid overveje er størrelsen på dine moduler/scripts. Hvis et
-        script er for stort, bør du overveje at opdele det i en anden fil.
+        ting man altid bør overveje er størrelsen på dine moduler/scripts. Hvis et
+        script er for stort, bør du overveje at opdele det i to filer.
         Asynkron programmering kan også øge ydeevnen af din applikation, da du
-        ikke blokerer hovedtråden.
+        ikke blokerer main-tråden.
       </p>
 
       <h3>SSR vs. CSR</h3>
       <p>
         Client-Side-Rendering (CSR) er, når en klient anmoder om et websted, og
         koden sendes til klienten og derefter behandles og omdannes til den
-        side, vi ser. Server-Side-Rendering (SSR) er, når en klient anmoder om
-        et websted, og serveren behandler koden og sender siden til klienten.
-        Klienten får derefter øjeblikkeligt siden. 
+        side vi ser. 
+        Server-Side-Rendering (SSR) er, når en klient anmoder om
+        et websted, så behandler serveren koden og sender herefter straks siden til klienten. 
         Forskellen mellem de to er,
         at med CSR skal klienten vente på, at koden bliver behandlet, men med
         SSR får klienten øjeblikkeligt siden. Dog med CSR skal klienten kun
@@ -75,28 +75,32 @@
         Der findes flere argumenter både for og imod:
       </p>
       <p>
-        Loadtime:
+       <b>Loadtime:</b>
+        <br>
         <b>CSR</b>
         Siden indlæses langsommere, da klienten skal behandle koden. Dog er siden efterfølgende hurtigere at navigere på, fordi klienten kun skal anmode om data, ikke hele siden.
         <b>SSR</b>
         Indlæser siden hurtigere, da serveren sender hele siden. Dog kan det være langsommere, hvis serveren er langsom.
       </p>
       <p>
-        Ressourcer brugt:
+        <b>Ressourcer brugt:</b>
+        <br>
         <b>CSR</b>
         Frigør serveren fra belastningen ved at behandle koden, men er ikke ideel for langsommere netværk eller enheder.
         <b>SSR</b>
         Serveren håndterer behandlingen, så klienten ikke behøver det, især hvis klientens enhed er langsom. Dog skal serveren være kraftig nok til at håndtere behandlingen.
       </p>
       <p>
-        SEO:
+        <b>SEO:</b>
+        <br>
         <b>CSR</b>
         Bedre til dynamisk indhold, men ikke så godt til SEO, fordi det er svært for webcrawlers at læse indholdet.
         <b>SSR</b>
         Meget bedre til SEO, da webcrawlers kan læse hele indholdet af siden. Det kræver ressourcer at gengive siden for webcrawlers og bots.
       </p>
       <p>
-        CORS:
+        <b>CORS:</b>
+        <br>
         <b>CSR</b>
         Skal håndtere CORS, f.eks. ved at indstille headers eller konfigurere backend for at tillade CORS.
         <b>SSR</b>

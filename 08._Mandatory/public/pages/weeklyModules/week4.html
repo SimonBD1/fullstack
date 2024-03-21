@@ -22,7 +22,7 @@
         PUT erstatter al data'en i et objekt (kan godt bare erstattes med samme
         værdier), og PATCH bruges til hvis man kun vil opdatere en enkelt værdi
         i et objekt. I ens endpoints er det vigtigt i det hele taget når man
-        laver crud, pånær når man laver/POST et nyt objekt, at man tilføjer
+        laver crud, på nær når man laver/POST et nyt objekt, at man tilføjer
         "/:id" til ens sti, så man ved at man arbejder med det rigtige objekt.
         Disse endpoints skal følge navnekonventionerne og fortsætte med at bruge
         samme start i URL'en, eksempelvis i vores Drinks projekt er vores url
@@ -37,11 +37,11 @@
       <h3>Date i html footer med javascript</h3>
       <p>
         I den ene linje kode nedenfor har det lykkedes os at få det nuværende år
-        dynamisk. det vil kort fortalt sige at den opdatere af sig selv ved
+        dynamisk. Det vil kort fortalt sige at den opdaterer af sig selv ved
         årsskiftet så vi ikke manuelt skal redigere "2024" til "2025" når
         nytåret er skudt igang. Vi tager først fat i elementet med
         <code>getElementByID</code> og sætter det til hvad vi har kaldt vores
-        placeholder i vores HTML-fil. dernæst kalder vi
+        placeholder i vores HTML-fil. Dernæst kalder vi
         <code>.textContext</code> for at erstatte dens text indhold med det som
         kommer efter. Den måde vi får fat på det nuværende år er så ved at kalde
         på <code>new Date().getFullYear()</code> med "®" foran.
@@ -52,15 +52,22 @@
 
       <h3>Fetch request</h3>
       <p>
-        i eksemplet nedenfor bruger vi fetch api'et til at foretage en GET-anmodning til "https://www.google.com" og returner et promise, der repræsentere svaret fra serveren.
-        <code>.then((response)) => response.text()</code>  Når anmodningen er færdig, konverteres svaret til tekst ved hjælp af response.text()-metoden. Dette returnerer et andet løfte, der repræsenterer teksten i svaret.
-        <code>.then((result) => res.send(result))</code>Når teksten er modtaget fra svaret, sender denne linje teksten som svar på den oprindelige anmodning til "/proxy"-ruten.
-        <code>.then(buffer => { const decoder = new TextDecoder() })</code> hjælper med at få tegn som eksempelvis "æ, ø og å"
+        i eksemplet nedenfor bruger vi fetch api'et til at foretage en
+        GET-anmodning til "https://www.google.com" og returnere et promise, der
+        repræsenterer svaret fra serveren.
+        <code>.then((response)) => response.text()</code> Når anmodningen er
+        færdig, konverteres svaret til tekst ved hjælp af
+        response.text()-metoden. Dette returnerer et andet løfte, der
+        repræsenterer teksten i svaret.
+        <code>.then((result) => res.send(result))</code> Når teksten er modtaget
+        fra svaret, sender denne linje teksten som svar på den oprindelige
+        anmodning til "/proxy"-ruten.
+        <code>.then(buffer => { const decoder = new TextDecoder() })</code>
+        hjælper med at få tegn som eksempelvis "æ, ø og å".
       </p>
       <figure>
-        <img src="../../assets/images/fetch.png"/>
+        <img src="../../assets/images/fetch.png" />
       </figure>
-
     </div>
   </section>
 </main>

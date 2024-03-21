@@ -8,14 +8,8 @@
         <ul>
           <li>Can work with both types of import/export in HTML.</li>
           <li>Can import/export in both ways in Node.js</li>
-          <li>
-            Understands the security need for serving static files and can do it
-            in Express.
-          </li>
-          <li>
-            Can argue for a better way to structure the frontend (assets, pages)
-            and how to structure HTML.
-          </li>
+          <li>Understands the security need for serving static files and can do it in Express.</li>
+          <li>Can argue for a better way to structure the frontend (assets, pages) and how to structure HTML.</li>
         </ul>
       </div>
     </header>
@@ -24,9 +18,9 @@
       <h2>Uge 5</h2>
       <h3>Import og export</h3>
       <p>
-        import og export er 2 måder på hvordan man inkludere en funktion,
-        objekter mm. så de kan bruges på tværs af dokumenter, med import
-        statementet. der findes 2 typer af export, den ene er "export default"
+        Import og export er 2 måder på hvordan man inkludere en funktion,
+        objekter mm., så de kan bruges på tværs af dokumenter, med import
+        statementet. Der findes 2 typer af export, den ene er "export default"
         og den anden er bare "export". Export bruges når du eksportere flere
         ting fra en fil eller et modul. Når du bruger export, skal du
         specificere navnet på det, du eksporterer, og dette navn bruges, når du
@@ -38,8 +32,8 @@
         default, kan du kun have én default eksport pr. fil eller modul.
       </p>
       <p>
-        i HTML bruges import eksempelvis når vi skal gøre bruge styles fra css
-        filer. dem importere vi øverst indenfor meta-tag klammerne med
+        I HTML bruges import eksempelvis når vi skal gøre bruge styles fra css
+        filer. dem importerer vi øverst indenfor meta-tag klammerne med
         link-tagget. I dette tag skal man definere path'en til hvor ens .css fil
         ligger. Man kan også importere scripts med dets eget tag. Det ser typisk
         således ud
@@ -50,10 +44,10 @@
         forskellige dele af ens applikation.
       </p>
       <p>
-        i Node.js kan man bruge "require" funktionen til at importere moduler
+        I Node.js kan man bruge "require" funktionen til at importere moduler
         fra et bibliotek. Vi har gjort det ved at skrive
         <code>const express = require("express")</code>
-        funktionen returnere all de exports fra modulet som er
+        funktionen returnerer alle de exports fra modulet som er
         nødvendige/required. Dette er commonJS måde at importere moduler på.
         <code>import express from 'express';</code> er den nye og mere smarte
         måde at importere på i javascript
@@ -61,8 +55,8 @@
 
       <h3>Sikkerhed</h3>
       <p>
-        Når du serverer statiske filer, er det vigtigt at danne sig nogle
-        sikkerheds overvejlser når man publicere applikationen. Hvis du server
+        Når du gør statiske filer tilgængelige på din server, er det vigtigt at danne sig nogle
+        sikkerheds overvejlser når man publicerer applikationen. Hvis du <i>"server"</i>
         filer fra en mappe, der er tilgængelig for alle, er det vigtigt at være
         forsigtig med ikke at serve filer, der indeholder eksempelvis
         adgangskoder, API-nøgler eller andre følsomme data. For at forhindre
@@ -71,22 +65,24 @@
       </p>
       <p>
         Vi har også opdelt vores projekter i forskellige mapper, så vi kan vælge
-        hvilke vi server og hvilke vi holder skjult. Frontend-strukturen er
+        hvilke vi publicerer og hvilke vi holder skjult. Frontend-strukturen er
         måden vi organiserer Assets, Pages og Components på i vores frontend,
         som er de statiske filer, der ligger i en "public" mappe. En god
-        struktur gør koden mere læsbar og vedligeholdelig. 
-        "Assets" er de filer, der bruges i frontend (billeder, CSS og JS-filer). 
-        "Pages" er HTML-filerne, der serves til brugeren. 
-        "Components" er genanvendelige dele af frontend, såsom en header, footer eller navigationsbar.
+        struktur gør koden mere læsbar og vedligeholdelig. "Assets" er de filer,
+        der bruges i frontend (billeder, CSS og JS-filer). "Pages" er
+        HTML-filerne, der serves til brugeren. "Components" er genanvendelige
+        dele af frontend, såsom en header, footer eller navigationsbar.
       </p>
       <figure>
-        <img src="../../assets/images/mappeStrukturPublic.png"/>
+        <img src="../../assets/images/mappeStrukturPublic.png" />
       </figure>
       <p>
-        I denne struktur danner man sig et god billede af hvad man kan forvente at der vil ligge i mapperne.
-        I mapperne er der også undermapper. Undermapperne kan så videre definere i undergrupper om hvilke filer de inkludere. Man kan også i eksempelvis "contact" mappen under "pages" også inkludere css-filer og javascript filer, som kun specifikt bliver brugt til den enkelte side, hvis der er noget specielt man har brug for.
-        
-
+        I denne struktur danner man sig et godt billede af hvad man kan forvente
+        at der vil ligge i mapperne. I mapperne er der også undermapper.
+        Undermapperne kan så videre definere i undergrupper om hvilke filer de
+        inkludere. Man kan også i eksempelvis "contact" mappen under "pages"
+        også inkludere css-filer og javascript filer, som kun specifikt bliver
+        brugt til den enkelte side, hvis der er noget specielt man har brug for.
       </p>
     </div>
   </section>

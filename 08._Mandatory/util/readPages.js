@@ -26,7 +26,7 @@ export const week4Page= renderPage(week4, {
 })
 
 const week5 = readPage("./public/pages/weeklyModules/week5.html")
-export const week5Page= renderPage(week1, {
+export const week5Page= renderPage(week5, {
     tabTitle: "Uge 5"
 })
 

@@ -6,12 +6,28 @@
       <div class="wrapper">
         <h1>Læringsmål</h1>
         <ul>
-          <li>Understands the use case for Nodemon and its limitation for development.</li>
-          <li>Can use loop methods (+map, +filter, %reduce). Can choose the right one at the appropriate time: We wish to use loop methods and in a functional manner (avoiding side effects). for loops are for finger counting.</li>
-          <li>Understands why a functional approach to loops is to be preferred and how to implement it without side effects.</li>
-          <li>Can use the right terminology when it comes to the different parts of an URL.</li>
+          <li>
+            Understands the use case for Nodemon and its limitation for
+            development.
+          </li>
+          <li>
+            Can use loop methods (+map, +filter, %reduce). Can choose the right
+            one at the appropriate time: We wish to use loop methods and in a
+            functional manner (avoiding side effects). for loops are for finger
+            counting.
+          </li>
+          <li>
+            Understands why a functional approach to loops is to be preferred
+            and how to implement it without side effects.
+          </li>
+          <li>
+            Can use the right terminology when it comes to the different parts
+            of an URL.
+          </li>
           <li>Can make a POST request and handle it in Express.</li>
-          <li>Understands the need for body parsing and how to do it in Express.</li>
+          <li>
+            Understands the need for body parsing and how to do it in Express.
+          </li>
         </ul>
       </div>
     </header>
@@ -20,56 +36,92 @@
       <h2>Uge 3</h2>
       <h3>Nodemon</h3>
       <p>
-        Nodemon er et værktøj der bruges til udvikling i Node.js. Nodemon overvåger filer for ændringer og genstarter automatisk din server, når der foretages ændringer i din kildekode. Det giver en mere effektiv udviklingsproces ved at fjerne behovet for manuelt at genstarte serveren efter hver ændring.
-        Dog har det sine begrænsninger, for hvis man arbejder i et stort projekt, eller har knyttet en database til sit program, kan det påvirke negativt. En af negativerne er øget cpu og hukommelsesbrug.
-        Nodemon er heller ikke optimeret til produktionsmiljøer, da det ikke er optimeret til at håndtere høj trafik, sikkerhed og ej heller stabilitet.
-        for at køre nodemon i sit program skal man først installere det med <code>npm install -g nodemon</code> og bruges så i terminalen efter ved at bytte node app.js ud med nodemon app.js 
+        Nodemon er et værktøj der bruges til udvikling i Node.js. Nodemon
+        overvåger filer for ændringer og genstarter automatisk din server, når
+        der foretages ændringer i din kildekode. Det giver en mere effektiv
+        udviklingsproces ved at fjerne behovet for manuelt at genstarte serveren
+        efter hver ændring. Dog har det sine begrænsninger, for hvis man
+        arbejder i et stort projekt, eller har knyttet en database til sit
+        program, kan det påvirke negativt. En af ulemperne er øget cpu og
+        hukommelsesbrug. Nodemon er heller ikke optimeret til
+        produktionsmiljøer, da det ikke er optimeret til at håndtere høj trafik,
+        sikkerhed og heller ikke stabilitet. For at køre nodemon i sit program
+        skal man først installere det med <code>npm install -g nodemon</code> og
+        bruges så i terminalen efter ved at bytte node app.js ud med nodemon
+        app.js
       </p>
 
       <h3>Loop metoder</h3>
       <p>
-        Vi lærte af Anders i timen, at for loops er kun hvis vi looper igennem noget hvor man kan tælle på fingrene (1-20ca.)
-        Først har vi map-metoden, som bruges til at gå igennem alle elementer i et array og anvende ens funktion på dem, hvorefter man kan putte de nye værdier i et nyt array.
-        Næst har vi Filter, som bruges til at gennemgå hvert element i et array og returnere et nyt array, der kun indeholder elementer, der opfylder en betingelse defineret af en funktion.
-        Og sidst reduce, som bruges til at reducere et array til en enkelt værdi ved at udføre en funktion på hvert element i arrayet og tilføje til resultatet.
-        <code>const numbers = [1, 2, 3, 4, 5];
-            const sum = numbers.reduce((acc, num) => acc + num, 0);
-            // Resultat: 15 (1 + 2 + 3 + 4 + 5)</code>
+        Vi lærte af Anders i timen, at For loops er kun hvis vi looper igennem
+        noget hvor man kan tælle på fingrene (1-20ca.) Hvis man skal igennem
+        større loops, har vi map-metoden, som bruges til at gå igennem alle
+        elementer i et array og anvende ens funktion på dem, hvorefter man kan
+        putte de nye værdier i et nyt array. Næste metode er Filter, som bruges
+        til at gennemgå hvert element i et array og returnere et nyt array, der
+        kun indeholder elementer, der opfylder en betingelse defineret af en
+        funktion. Og sidst reduce, som bruges til at reducere et array til en
+        enkelt værdi ved at udføre en funktion på hvert element i arrayet og
+        tilføje det til resultatet.
+        <code
+          >const numbers = [1, 2, 3, 4, 5]; const sum = numbers.reduce((acc,
+          num) => acc + num, 0); // Resultat: 15 (1 + 2 + 3 + 4 + 5)</code
+        >
       </p>
 
       <h3>URL'ens anatomi</h3>
       <p>
-        I det nedenstående eksempel har vi gennemgået de forskellige dele af et URL, som jeg nu vil bryde ned.
-        det første "https://" er hvilken protokol hjemmesiden gør brug af, i dette eksempel er det HyperText Transfer Protocol Secure, som er den nyere og mere sikre udgave af HTTP.
-        efterfulgt af det kommer domænet, som er det servernavn som man vil tilgå, det kan enten være som i eksemplet www.google.com, eller en ip-adresse som "192.01.01"
-        derefter kommer der et port nummer, som enten skal skrives, eller er underforstået. Eksempelvis kører http som standard på port 80 og https på 443, og det behøver man så ikke at skrive i ens url.
-        derefter kommer path, som er hvilken sti man skal følge for at finde ressourcen på serveren, det kan enten være en sti til en fil, eller en path som er forudbestemt og selv sørger for at finde indholdet.
-        Så er vi nået til query strings, som indeholder data, der sendes til serveren som en del af hhtp anmodningen. Den indeholder normalt nøgleværdipar, adskilt af ampersand (&), og bruges til at sende ekstra oplysninger til serveren.
+        I det nedenstående eksempel har vi gennemgået de forskellige dele af et
+        URL, som jeg nu vil bryde ned. Det første "https://" er hvilken protokol
+        hjemmesiden gør brug af, i dette eksempel er det HyperText Transfer
+        Protocol Secure, som er den nyere og mere sikre udgave af HTTP.
+        Efterfulgt af det kommer domænet, som er det servernavn som man vil
+        tilgå, det kan enten være som i eksemplet www.google.com, eller en
+        IP-adresse som "192.01.01" derefter kommer der et port nummer, som enten
+        skal skrives, eller er underforstået. Eksempelvis kører HTTP som
+        standard på port 80 og HTTPS på 443, og det behøver man så ikke at
+        skrive i ens URL. Derefter kommer path, som er hvilken sti man skal
+        følge for at finde ressourcen på serveren, det kan enten være en sti til
+        en fil, eller en path som er forudbestemt og selv sørger for at finde
+        indholdet. Så er vi nået til query strings, som indeholder data, der
+        sendes til serveren som en del af HTTP anmodningen. Den indeholder
+        normalt nøgleværdipar, adskilt af ampersand (&), og bruges til at sende
+        ekstra oplysninger til serveren.
       </p>
       <figure>
-        <img src="../../assets/images/anatomiURL.png">
+        <img src="../../assets/images/anatomiURL.png" />
       </figure>
 
       <h3>Post request i Express</h3>
       <p>
-        Vi lærte i vores Drinks projekt hvordan vi håndterede post request med express. istedet for at bruge app.get, udskiftede vi det sidte med post.
-        Det så således ud: <code>app.post("/drink",(req,res)=>{
-            const newDrink = req.body;
-            drinks.push(newDrink);
-            res.send({ data: newDrink })
-        })</code>
-        det endpoint testede vi så af i postman som kan ses i screenshottet nedenfor
+        Vi lærte i vores Drinks projekt hvordan vi håndterede post request med
+        express. Istedet for at bruge app.get, udskiftede vi det sidte med post.
+        Det så således ud:
+        <code
+          >app.post("/drink",(req,res)=>{ const newDrink = req.body;
+          drinks.push(newDrink); res.send({ data: newDrink }) })</code
+        >
+        Det endpoint testede vi så af i postman som kan ses i screenshottet
+        nedenfor
       </p>
       <figure>
-        <img src="../../assets/images/postmanPost.png">
+        <img src="../../assets/images/postmanPost.png" />
       </figure>
 
       <h3>Body parsing</h3>
       <p>
-        Når en request sendes til ens server, så har serveren brug for at parse body'en af den request til at få data'en.
-        Hvis dataen eksempelvis er json så skal serveren parse det som værende json.
-        Dette kan express ikke gøre af sig selv, så vi bliver nød til at introducere et middleware. 
-        Det har vi tidligere gjort i vores opgaver med <code>app.use(express.json());</code>
-        Så når det er blevet gjort, kan vi når vi laver POST requests til eksempelvis /drink endpointet, parse json data fra request body'en.
-        og det bliver vi nød til da al dataen som kommer fra request bodyen er i datatypen json. Så med denne ændring kan man nu nemt håndtere og arbejde med data, der sendes i requestens body.
+        Når en request sendes til ens server, så har serveren brug for at parse
+        body'en af den request til at få data'en. Hvis dataen eksempelvis er
+        json så skal serveren parse det som værende json. Dette kan express ikke
+        gøre af sig selv, så vi bliver nødt til at introducere et middleware. Det
+        har vi tidligere gjort i vores opgaver med
+        <code>app.use(express.json());</code>
+        Så når det er blevet gjort, kan vi når vi laver POST requests til
+        eksempelvis /drink endpointet, parse json data fra request body'en. og
+        det bliver vi nødt til da al dataen som kommer fra request bodyen er i
+        datatypen json. Så med denne ændring kan man nu nemt håndtere og arbejde
+        med data, der sendes i requestens body.
       </p>
+    </div>
+  </section>
+</main>
