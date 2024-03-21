@@ -1,0 +1,107 @@
+<header></header>
+
+<main>
+  <section>
+    <header>
+      <div class="wrapper">
+        <h1>Læringsmål</h1>
+        <ul>
+          <li>
+            Understands the difference between client-side redirection and
+            server-side.
+          </li>
+          <li>Can recount the number of ways and approaches to redirection.</li>
+          <li>
+            Understands how code and its placement affects application memory
+            and efficiency.
+          </li>
+          <li>
+            Understands the arguments for and against SSR vs. CSR when it comes
+            to: Load time. Ressources spent (duration, when and where). SEO.
+            Dealing with CORS. (SSR has no CORS issues.)
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <div class="body">
+      <h2>Uge 6</h2>
+
+      <h3>Client-side og Server-side redirection</h3>
+      <p>
+        Server-side omdirigering sker, når serveren svarer med en HTTP-kode og
+        en header for 'Location' med URL'en, der skal omdirigeres til.
+        Klient-side omdirigering håndteres på en måde, hvor JavaScript styrer
+        det ved hjælp af window.location.href-attributten, der dynamisk
+        omdirigerer brugeren.
+
+        <code
+          >setTimeout(() => (window.location.href = "/publicsquare"), 3000);
+        </code>
+        I eksemplet ovenfor sætter vi et timeout på 3 sekunder fra det
+        tidspunkt, hvor siden med scriptet indlæses, for derefter at omdirigere
+        til '/publicsquare'.
+      </p>
+
+      <h3>Kodeplacering og dens effekt på applikationen</h3>
+      <p>
+        Når du erklærer og initialiserer variabler i det globale omfang, er de
+        tilgængelige i hele dit projekt, hvilket kan medføre højere
+        hukommelsesforbrug. Brugen af lokal variabler vil gøre koden meget mere
+        læselig og organiserbar, og hukommelsesforbruget vil være lavere. Et
+        andet emne er "lazy loading", hvilket er, når du kun indlæser moduler og
+        scripts, når du har brug for dem. Dette vil gøre den indledende
+        sideindlæsning hurtigere. Dette er særligt nyttigt, når du har mange
+        moduler og scripts, og du ikke har brug for dem alle på samme tid. En
+        ting at altid overveje er størrelsen på dine moduler/scripts. Hvis et
+        script er for stort, bør du overveje at opdele det i en anden fil.
+        Asynkron programmering kan også øge ydeevnen af din applikation, da du
+        ikke blokerer hovedtråden.
+      </p>
+
+      <h3>SSR vs. CSR</h3>
+      <p>
+        Client-Side-Rendering (CSR) er, når en klient anmoder om et websted, og
+        koden sendes til klienten og derefter behandles og omdannes til den
+        side, vi ser. Server-Side-Rendering (SSR) er, når en klient anmoder om
+        et websted, og serveren behandler koden og sender siden til klienten.
+        Klienten får derefter øjeblikkeligt siden. 
+        Forskellen mellem de to er,
+        at med CSR skal klienten vente på, at koden bliver behandlet, men med
+        SSR får klienten øjeblikkeligt siden. Dog med CSR skal klienten kun
+        anmode om data, ikke hele siden, hvilket gør siden hurtigere at navigere
+        på.
+
+        Der findes flere argumenter både for og imod:
+      </p>
+      <p>
+        Loadtime:
+        <b>CSR</b>
+        Siden indlæses langsommere, da klienten skal behandle koden. Dog er siden efterfølgende hurtigere at navigere på, fordi klienten kun skal anmode om data, ikke hele siden.
+        <b>SSR</b>
+        Indlæser siden hurtigere, da serveren sender hele siden. Dog kan det være langsommere, hvis serveren er langsom.
+      </p>
+      <p>
+        Ressourcer brugt:
+        <b>CSR</b>
+        Frigør serveren fra belastningen ved at behandle koden, men er ikke ideel for langsommere netværk eller enheder.
+        <b>SSR</b>
+        Serveren håndterer behandlingen, så klienten ikke behøver det, især hvis klientens enhed er langsom. Dog skal serveren være kraftig nok til at håndtere behandlingen.
+      </p>
+      <p>
+        SEO:
+        <b>CSR</b>
+        Bedre til dynamisk indhold, men ikke så godt til SEO, fordi det er svært for webcrawlers at læse indholdet.
+        <b>SSR</b>
+        Meget bedre til SEO, da webcrawlers kan læse hele indholdet af siden. Det kræver ressourcer at gengive siden for webcrawlers og bots.
+      </p>
+      <p>
+        CORS:
+        <b>CSR</b>
+        Skal håndtere CORS, f.eks. ved at indstille headers eller konfigurere backend for at tillade CORS.
+        <b>SSR</b>
+        CORS administreres af browseren, så de indebærer ikke browser til server-kommunikation. Det betyder, at CORS ikke er et problem med SSR.
+      </p>
+    </div>
+  </section>
+</main>

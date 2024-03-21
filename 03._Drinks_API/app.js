@@ -66,12 +66,13 @@ const drinks = [
         const id = Number(req.params.id);
         const index = drinks.findIndex(drink => drink.id === id);
         if (index !== -1) {
-            drinks.splice(index, 1); //skal jeg bruge delete istedet?
+            drinks.splice(index, 1);                                //skal jeg bruge delete istedet?
             res.send({ data: "Drink deleted successfully" });
         } else {
             res.status(404).send({ error: "Drink not found" });
         }
     })
+    
     
 
     app.listen(8080, (error)=>{

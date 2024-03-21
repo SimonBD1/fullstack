@@ -2,6 +2,11 @@
   font-family: system-ui;
   
 }
+.logo{
+  height: 100px;
+  width: 100px;
+  display: flex;
+}
 
 .wrapper {
   border: 1px solid#cad4df;
