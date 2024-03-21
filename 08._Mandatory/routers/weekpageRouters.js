@@ -10,7 +10,6 @@ import {
   week5Page,
   week6Page,
   week7Page,
-  week8Page,
 } from "../util/readPages.js";
 
 router.get("/uge1", (req, res) => {
@@ -41,8 +40,8 @@ router.get("/uge7", (req, res) => {
   res.send(week7Page);
 });
 
-router.get("/uge8", (req, res) => {
+/* router.get("/uge8", (req, res) => {
   res.send(week8Page);
-});
+}); */
 
 export default router;

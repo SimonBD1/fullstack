@@ -40,8 +40,8 @@ export const week7Page= renderPage(week7, {
     tabTitle: "Uge 7"
 })
 
-const week8 = readPage("./public/pages/weeklyModules/week8.html")
+/* const week8 = readPage("./public/pages/weeklyModules/week8.html")
 export const week8Page= renderPage(week8, {
     tabTitle: "Uge 8"
-})
+}) */
 
