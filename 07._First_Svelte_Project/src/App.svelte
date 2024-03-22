@@ -1,6 +1,6 @@
-
+<script>
+  import Greeter from "./components/Greeter/Greeter.svelte";
+</script>
 <main>
-  <h1>HELLOOO</h1>
-
-
+  <Greeter></Greeter>
 </main>
