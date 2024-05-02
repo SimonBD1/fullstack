@@ -11,8 +11,8 @@
     if (!isLoggedIn) {
       navigate('/login', { replace: true });
     } else {
-      return Protected;
-    }
+    return Protected;
+  }
   }
 </script>
 

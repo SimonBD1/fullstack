@@ -7,12 +7,12 @@ router.post('/register', register);
 router.post('/login', login);
 
 router.get('/validate-session', (req, res) => {
-    if (req.session.userId) {
-      res.json({ isLoggedIn: true });
-    } else {
-      res.status(401).json({ isLoggedIn: false });
-    }
-  });
+  if (req.session.userId) {
+    res.json({ isLoggedIn: true });
+  } else {
+    res.status(401).json({ isLoggedIn: false });
+  }
+});
 
   router.get('/logout', (req, res) => {
     req.session.destroy(err => {

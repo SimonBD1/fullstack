@@ -46,7 +46,12 @@ export async function login(req, res) {
     if (!user || !(await bcrypt.compare(password, user.password))) {
       return res.status(401).json({ error: 'Invalid credentials' });
     }
-    req.session.userId = user.id; 
-    res.json({ message: 'Logged in successfully' });
+    req.session.userId = user.id;  
+    req.session.save(err => {
+      if (err) {
+        return res.status(500).send('Failed to save session');
+      }
+      res.json({ message: 'Logged in successfully' });
+    });
   });
 };

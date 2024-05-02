@@ -1,4 +1,3 @@
-import 'dotenv/config';
 import express from 'express';
 import session from 'express-session';
 import connectSqlite3 from 'connect-sqlite3';
@@ -16,16 +15,17 @@ const app = express();
 app.use(cors({
     origin: 'http://localhost:5173', 
     credentials: true
-}));
+  }));
+  
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '../public'))); 
 
 app.use(session({
-    store: new SQLiteStore(),
-    secret:  process.env.SESSION_SECRET,
+    store: new SQLiteStore({ db: 'sessions.db' }),
+    secret: 'secret',
     resave: false,
     saveUninitialized: false,
-    cookie: { secure: 'auto' }
+    cookie: { secure: false } 
 }));
 
 app.use('/api/auth', authRoutes);
